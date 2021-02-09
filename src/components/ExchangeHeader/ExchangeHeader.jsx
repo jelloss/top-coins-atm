@@ -15,8 +15,7 @@ const Header = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
-    color: lightblue;
+    color: white;
 `;
 
 const H1 = styled.h1`
@@ -28,10 +27,10 @@ const H1 = styled.h1`
 export default class ExchangeHeader extends Component {
     render() {
         return (
-            <Header className="App-header">
+            <Header >
                 <Img src={logo} alt="React logo" />
                 <H1>
-                    Coin exchange
+                    Coin exchange 
                 </H1>
             </Header>
         );
