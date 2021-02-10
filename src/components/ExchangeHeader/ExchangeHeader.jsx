@@ -25,6 +25,8 @@ const H1 = styled.h1`
   
 
 export default class ExchangeHeader extends Component {
+
+
     render() {
         return (
             <Header >
