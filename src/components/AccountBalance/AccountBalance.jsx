@@ -3,9 +3,19 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
+    border: 1px;
     font-size: 2rem;
-    text-align: left;
+    text-align: start;
     padding: 2rem 3rem 0rem;
+    margin: 0px 140px 0px;
+`;
+
+const Button = styled.button`
+    color: #ffffff;
+    background-color: #0004f7;
+    border-radius: 10px;
+    margin: 10px 20px 10px;
+
 `;
 
 
@@ -21,7 +31,8 @@ export default function AccountBalance (props) {
     return (
         <Section >
             {content}
-            <button onClick={props.handleBalanceVisibilityChange}>{buttonText}</button>
+            <Button onClick={props.handleBalanceVisibilityChange}>{buttonText}</Button>
+            <Button>helicoptermoney!!!</Button>
         </Section>
     );
 }

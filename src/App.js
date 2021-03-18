@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Div = styled.div`
   text-align: center;
-  background-color: rgb(20, 56, 97);
+  background-color: #000000;
   color: #cccccc;
 
 `;
@@ -55,6 +55,7 @@ function App (props){
 
 
 
+
 const handleBalanceVisibilityChange = () => {
     setShowBalance(oldValue => !oldValue)
   }
@@ -73,6 +74,7 @@ const handleRefresh = async (valueChangeId) => {
     });
     setCoinData(newCoinData);
   }
+
 
 
   return (

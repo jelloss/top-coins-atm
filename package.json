@@ -16,7 +16,9 @@
     "uuidv4": "^6.2.6",
     "web-vitals": "^0.2.4"
   },
-    "homepage": "http://jelloss.github.io/coin-exchange",
+    
+  
+  "homepage": "https://jelloss.github.io/coin-exchange",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -3,10 +3,15 @@ import Coin from '../Coin/Coin';
 import styled from 'styled-components';
 
 const Table = styled.table`
-    margin: 25px auto 50px auto;
+    margin: 15px auto 127px auto;
     display: inline-block;
-    font-size: 1.4rem;                         
+    font-size: 1.5rem;     
+    background-color: #000000;               
 `;
+
+
+
+
 
 
 
@@ -20,7 +25,6 @@ export default function CoinList (props) {
                   <th>Ticker</th>
                   <th>Price</th>
                   {props.showBalance ? <th>Balance</th> : null}
-                  <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
