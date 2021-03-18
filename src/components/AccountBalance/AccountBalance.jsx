@@ -4,18 +4,19 @@ import styled from 'styled-components';
 
 const Section = styled.section`
     border: 1px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: start;
     padding: 2rem 3rem 0rem;
     margin: 0px 140px 0px;
+    background-color: #1619b6;
 `;
 
 const Button = styled.button`
-    color: #ffffff;
-    background-color: #0004f7;
-    border-radius: 10px;
+    color: #000000;
+    background-color:  #fffafa;
+    border-radius: 5px;
     margin: 10px 20px 10px;
-
+    padding: 0.5rem 1rem;
 `;
 
 

@@ -9,12 +9,6 @@ const Table = styled.table`
     background-color: #000000;               
 `;
 
-
-
-
-
-
-
 export default function CoinList (props) {
 
         return (

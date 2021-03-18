@@ -5,18 +5,19 @@ import styled from 'styled-components';
 
 const Td = styled.td`
   //Names, Tickers, Prices, Balances
-  border: 2px solid #cccccc;
+  border: 1px solid #cccccc;
   padding: 0rem 4rem 0rem;
   border-radius: 10px;
-  background-color: #0004f7;
+  background-color: #1619b6;  //#0004f7;
   
 `;
 
 const Button = styled.button`
 //refresh
   color: #ffffff;
-  background-color: #0004f7;
+  background-color: #2022b3;
   border-radius: 5px;
+  padding: 0.25rem 1rem;
 `;
 
 const BUtton = styled.button`
@@ -24,6 +25,7 @@ const BUtton = styled.button`
   color: #000000;
   background-color: #19ff05;
   border-radius: 5px;
+  padding: 0.25rem 1rem;
 `;
 
 const BUTton = styled.button`
@@ -31,13 +33,15 @@ const BUTton = styled.button`
   color: #000000;
   background-color: #ff0505;
   border-radius: 5px;
+  padding: 0.25rem 1rem;
 `;
 
 const BUTTON = styled.button`
   //Chart
   color: #000000;
-  background-color: #adadad;
+  background-color: #ffffff;
   border-radius: 5px;
+  padding: 0.25rem 1rem;
 `;
 
 const TD = styled.td`
