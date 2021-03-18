@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/coin-exchange/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/coin-exchange/static/js/main.f2af7d2e.chunk.js",
-    "main.js.map": "/coin-exchange/static/js/main.f2af7d2e.chunk.js.map",
-    "runtime-main.js": "/coin-exchange/static/js/runtime-main.8fbfb8cb.js",
-    "runtime-main.js.map": "/coin-exchange/static/js/runtime-main.8fbfb8cb.js.map",
-    "static/js/2.65432de2.chunk.js": "/coin-exchange/static/js/2.65432de2.chunk.js",
-    "static/js/2.65432de2.chunk.js.map": "/coin-exchange/static/js/2.65432de2.chunk.js.map",
-    "static/js/3.9fcf2710.chunk.js": "/coin-exchange/static/js/3.9fcf2710.chunk.js",
-    "static/js/3.9fcf2710.chunk.js.map": "/coin-exchange/static/js/3.9fcf2710.chunk.js.map",
-    "index.html": "/coin-exchange/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/coin-exchange/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.65432de2.chunk.js.LICENSE.txt": "/coin-exchange/static/js/2.65432de2.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/coin-exchange/static/media/logo.6ce24c58.svg"
+    "main.css": "/top-coins-atm/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/top-coins-atm/static/js/main.f2af7d2e.chunk.js",
+    "main.js.map": "/top-coins-atm/static/js/main.f2af7d2e.chunk.js.map",
+    "runtime-main.js": "/top-coins-atm/static/js/runtime-main.ed29e018.js",
+    "runtime-main.js.map": "/top-coins-atm/static/js/runtime-main.ed29e018.js.map",
+    "static/js/2.463543bb.chunk.js": "/top-coins-atm/static/js/2.463543bb.chunk.js",
+    "static/js/2.463543bb.chunk.js.map": "/top-coins-atm/static/js/2.463543bb.chunk.js.map",
+    "static/js/3.9fcf2710.chunk.js": "/top-coins-atm/static/js/3.9fcf2710.chunk.js",
+    "static/js/3.9fcf2710.chunk.js.map": "/top-coins-atm/static/js/3.9fcf2710.chunk.js.map",
+    "index.html": "/top-coins-atm/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/top-coins-atm/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.463543bb.chunk.js.LICENSE.txt": "/top-coins-atm/static/js/2.463543bb.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/top-coins-atm/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8fbfb8cb.js",
-    "static/js/2.65432de2.chunk.js",
+    "static/js/runtime-main.ed29e018.js",
+    "static/js/2.463543bb.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.f2af7d2e.chunk.js"
   ]
