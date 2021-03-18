@@ -52,6 +52,24 @@ function App (props){
     } 
   });
 
+  const handleBuySell = (isbuy, tickerId) => {
+    let balanceChange = isbuy ? 1 : -1;
+    const newCoinData = coinData.map( ( values ) => {
+      let newValues = {...values};
+      if(tickerId === values.key) {
+        newValues.balance += balanceChange;
+        setBalance(oldBalance => oldBalance - balanceChange * newValues.price)
+      }
+      return newValues;
+    });
+    setCoinData(newCoinData);
+  }
+
+  const handlestimulus = () => {
+    setBalance(oldValue => oldValue + 1400);
+  }
+
+
 
 
 
@@ -83,11 +101,14 @@ const handleRefresh = async (valueChangeId) => {
       <AccountBalance 
         amount={balance} 
         showBalance={showBalance} 
-        handleBalanceVisibilityChange={handleBalanceVisibilityChange} />
+        handleBalanceVisibilityChange={handleBalanceVisibilityChange} 
+        handlestimulus = {handlestimulus} />
       <CoinList 
         coinData={coinData} 
         showBalance={showBalance}
-        handleRefresh={handleRefresh} />
+        handleRefresh={handleRefresh}
+        handleBuySell={handleBuySell} 
+        />
     </Div>
   );
 

@@ -32,7 +32,7 @@ export default function AccountBalance (props) {
         <Section >
             {content}
             <Button onClick={props.handleBalanceVisibilityChange}>{buttonText}</Button>
-            <Button>helicoptermoney!!!</Button>
+            <Button onClick={props.handlestimulus}>Claim 1400 stimulus</Button>
         </Section>
     );
 }

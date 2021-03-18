@@ -16,28 +16,28 @@ const Button = styled.button`
 //refresh
   color: #ffffff;
   background-color: #0004f7;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const BUtton = styled.button`
   //buy
   color: #000000;
   background-color: #19ff05;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const BUTton = styled.button`
   //sell
   color: #000000;
   background-color: #ff0505;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const BUTTON = styled.button`
-  //sell
+  //Chart
   color: #000000;
   background-color: #adadad;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const TD = styled.td`
@@ -51,10 +51,26 @@ export default function Coin(props) {
     const handleClick = (event) => {
       //prevent the default action of submitting
       event.preventDefault();
-
       props.handleRefresh(props.tickerId);
       }
-      
+
+    const handleBuy = (event) => {
+      event.preventDefault();
+      props.handleBuySell(true, props.tickerId);
+    }
+    
+    const handleSell = (event) => {
+      event.preventDefault();
+      props.handleBuySell(false, props.tickerId);
+    }
+    
+    const handleChart = (event) => {
+      event.preventDefault();
+      props.handleChartDisplay(props.tickerId);
+    }
+    
+
+    
     return (
       <tr>
           <Td>{props.name}</Td>
@@ -63,16 +79,23 @@ export default function Coin(props) {
           {props.showBalance ? <Td>{props.balance}</Td> : null}
           <TD>
             <form action="#" method="POST">
-              <Button onClick={handleClick}>Refresh</Button>
-            </form>
-            <form>
-              <BUtton>BUY</BUtton>
-              <BUTton>SELL</BUTton>
-            </form>
-            <form>
-              <BUTTON>
+
+            <BUtton onClick={handleBuy}>
+                BUY
+              </BUtton>
+
+              <BUTton onClick={handleSell}>
+                SELL
+              </BUTton>
+
+              <Button onClick={handleClick}>
+                REFRESH
+              </Button>
+
+              <BUTTON onClick={handleChart}>
                 CHART
               </BUTTON>
+           
             </form>
             
           </TD>
