@@ -4,105 +4,76 @@ import styled from 'styled-components';
 
 
 const Td = styled.td`
-  //Names, Tickers, Prices, Balances
   border: 1px solid #cccccc;
-  padding: 0rem 4rem 0rem;
-  border-radius: 10px;
-  background-color: #1619b6;  //#0004f7;
+  width: 16vh;
   
 `;
 
+
+const TdControls = styled(Td)`
+  width: 36vw;
+`;
+
+const TdName = styled(Td)`
+  width: 24vw;
+`;
+
 const Button = styled.button`
-//refresh
-  color: #ffffff;
-  background-color: #2022b3;
-  border-radius: 5px;
-  padding: 0.25rem 1rem;
+  font-size: 11px;
+  width: 64px;
+  margin: 3px 5px 0;
 `;
 
-const BUtton = styled.button`
-  //buy
-  color: #000000;
-  background-color: #19ff05;
-  border-radius: 5px;
-  padding: 0.25rem 1rem;
-`;
-
-const BUTton = styled.button`
-  //sell
-  color: #000000;
-  background-color: #ff0505;
-  border-radius: 5px;
-  padding: 0.25rem 1rem;
-`;
-
-const BUTTON = styled.button`
-  //Chart
-  color: #000000;
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 0.25rem 1rem;
-`;
-
-const TD = styled.td`
-  background-color: #000000;
-`;
 
 
 export default function Coin(props) {
 
 
-    const handleClick = (event) => {
+    const handleRefresh = (event) => {
       //prevent the default action of submitting
       event.preventDefault();
       props.handleRefresh(props.tickerId);
       }
 
-    const handleBuy = (event) => {
-      event.preventDefault();
-      props.handleBuySell(true, props.tickerId);
-    }
-    
-    const handleSell = (event) => {
-      event.preventDefault();
-      props.handleBuySell(false, props.tickerId);
-    }
-    
-    const handleChart = (event) => {
-      event.preventDefault();
-      props.handleChartDisplay(props.tickerId);
-    }
+      const handleBuy = (event) => {
+        //prevent the default action of submitting
+        event.preventDefault();
+        props.handleTransaction(true, props.tickerId);
+        }
+
+      const handleSell = (event) => {
+        //prevent the default action of submitting
+        event.preventDefault();
+        props.handleTransaction(false, props.tickerId);
+        }
+
+
     
 
     
     return (
       <tr>
-          <Td>{props.name}</Td>
+          <TdName>{props.name}</TdName>
           <Td>{props.ticker}</Td>
           <Td>${props.price}</Td>
-          {props.showBalance ? <Td>{props.balance}</Td> : null}
-          <TD>
+          <Td>{props.showBalance ? props.balance : '-'}</Td>
+          <TdControls>
             <form action="#" method="POST">
-
-            <BUtton onClick={handleBuy}>
-                BUY
-              </BUtton>
-
-              <BUTton onClick={handleSell}>
-                SELL
-              </BUTton>
-
-              <Button onClick={handleClick}>
-                REFRESH
+              <Button className="btn btn-info"onClick={handleRefresh}>
+                Refresh
+              </Button>
+              <Button className="btn btn-warning"onClick={handleBuy}>
+                Buy
+              </Button>
+              <Button className="btn btn-danger"onClick={handleSell}>
+                Sell
               </Button>
 
-              <BUTTON onClick={handleChart}>
-                CHART
-              </BUTTON>
+
            
             </form>
             
-          </TD>
+          </TdControls>
 
       </tr>
     );

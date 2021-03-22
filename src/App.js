@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import CoinList from './components/CoinList/CoinList';
 import AccountBalance from './components/AccountBalance/AccountBalance';
-
 import styled from 'styled-components';
 import ExchangeHeader from './components/ExchangeHeader/ExchangeHeader';
 import axios from 'axios';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/js/all';
+
 
 const Div = styled.div`
   text-align: center;
-  background-color: #000000;
+  background-color: rgb(20, 56, 97);
   color: #cccccc;
 
 `;
@@ -16,14 +19,10 @@ const Div = styled.div`
 const COIN_COUNT = 10;
 const formatPrice = price => parseFloat(Number(price).toFixed(4));
 
-
-
-
 function App (props){
 
-
   const [balance, setBalance] = useState(10000);
-  const [showBalance, setShowBalance] = useState(true);
+  const [showBalance, setShowBalance] = useState(false);
   const [coinData, setCoinData] = useState([]);
 
   const componentDidMount  = async () => {
@@ -52,31 +51,29 @@ function App (props){
     } 
   });
 
-  const handleBuySell = (isbuy, tickerId) => {
-    let balanceChange = isbuy ? 1 : -1;
-    const newCoinData = coinData.map( ( values ) => {
-      let newValues = {...values};
-      if(tickerId === values.key) {
-        newValues.balance += balanceChange;
-        setBalance(oldBalance => oldBalance - balanceChange * newValues.price)
-      }
-      return newValues;
-    });
-    setCoinData(newCoinData);
+  const handleBrrr = () => {
+    setBalance( oldBalance => oldBalance + 1200);
   }
-
-  const handlestimulus = () => {
-    setBalance(oldValue => oldValue + 1400);
-  }
-
-
-
 
 
 
 const handleBalanceVisibilityChange = () => {
     setShowBalance(oldValue => !oldValue)
   }
+
+const handleTransaction = (isBuy, valueChangeId) => {
+  var balanceChange = isBuy ? 1 : -1;
+  const newCoinData = coinData.map( function(values) {
+    let newValues = {...values};
+    if ( valueChangeId == values.key) {
+      newValues.balance += balanceChange;
+      setBalance( oldBalance => oldBalance - balanceChange * newValues.price );
+    }
+    return newValues;
+  });
+  setCoinData(newCoinData);
+}
+
 
 const handleRefresh = async (valueChangeId) => {
     const tickerUrl = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`;
@@ -101,13 +98,15 @@ const handleRefresh = async (valueChangeId) => {
       <AccountBalance 
         amount={balance} 
         showBalance={showBalance} 
+        handleBrrr={handleBrrr}
         handleBalanceVisibilityChange={handleBalanceVisibilityChange} 
-        handlestimulus = {handlestimulus} />
+         />
       <CoinList 
         coinData={coinData} 
         showBalance={showBalance}
+        handleTransaction={handleTransaction}
         handleRefresh={handleRefresh}
-        handleBuySell={handleBuySell} 
+        
         />
     </Div>
   );
